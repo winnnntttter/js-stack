@@ -1,0 +1,19 @@
+{
+    "extends": [
+        "airbnb",
+        "plugin:flowtype/recommended"//告诉 Babel 该用什么解析器
+    ],
+    "plugins": [
+        "flowtype",
+        "compat"
+    ],
+    "rules": {
+        // "semi": [2, "never"],//分号不必要
+        "no-unexpected-multiline": 2, //极端情况下必须分号
+        "compat/compat": 2
+    },
+    "env": {
+        "jest": true
+    }/* ,
+    "parser": "babel-eslint" */
+}

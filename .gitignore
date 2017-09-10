@@ -2,3 +2,4 @@
 npm-debug.log
 arn-error.log
 node_modules/
+/coverage/
