@@ -7,13 +7,13 @@
   "license": "HWM",
   "private": false,
   "scripts": {
-    "start": "babel-node src",
-    "test": "eslint src && flow && jest --coverage",
-    "precommit": "yarn test",
-    "prepush": "yarn test"
+    "start": "babel-node src/server",
+    "test": "eslint src && flow && jest --coverage"
   },
   "dependencies": {
-    "color": "^2.0.0"
+    "color": "^2.0.0",
+    "compression": "^1.7.0",
+    "express": "^4.15.4"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
