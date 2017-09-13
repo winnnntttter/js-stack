@@ -7,20 +7,28 @@
   "license": "HWM",
   "private": false,
   "scripts": {
-    "start": "babel-node src/server",
-    "test": "eslint src && flow && jest --coverage"
+    "start": "yarn dev:start",
+    "dev:start": "nodemon --ignore lib --exec babel-node src/server",
+    "test": "eslint src && flow && jest --coverage",
+    "prod:build": "rimraf lib && babel src -d lib --ignore .test.js",
+    "prod:start": "cross-env NODE_ENV=production pm2 start lib/server && pm2 logs",
+    "prod:stop": "pm2 delete server"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "color": "^2.0.0",
     "compression": "^1.7.0",
     "express": "^4.15.4"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^21.0.2",
+    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-flow": "^6.23.0",
+    "cross-env": "^5.0.5",
     "eslint": "3.19.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-compat": "^1.0.4",
@@ -30,7 +38,11 @@
     "eslint-plugin-react": "^7.1.0",
     "flow-bin": "^0.54.1",
     "husky": "^0.14.3",
-    "jest": "^21.0.2"
+    "jest": "^21.0.2",
+    "nodemon": "^1.12.0",
+    "pm2": "^2.6.1",
+    "rimraf": "^2.6.2",
+    "webpack-dev-server": "^2.7.1"
   },
   "browerslist": [
     "> 1%"
