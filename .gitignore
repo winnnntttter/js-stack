@@ -4,3 +4,4 @@ arn-error.log
 node_modules/
 /coverage/
 /lib/
+/dist/
