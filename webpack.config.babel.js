@@ -3,14 +3,14 @@
 import path from 'path';
 
 import { WDS_PORT } from './src/shared/config';
-import { isProd } from './src/shared/util'
+import { isProd } from './src/shared/util';
 
 export default {
   entry: [
     './src/client',
   ],
   output: {
-    fliename: 'js/bundle.js',
+    filename: 'js/bundle.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: isProd ? '/static/' : `http://localhost:${WDS_PORT}/dist/`,
   },
